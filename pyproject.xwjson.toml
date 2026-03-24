@@ -1,0 +1,212 @@
+# Source size (src/*): ~229.7 KB
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "xwjson"
+dynamic = [
+    "version",
+]
+description = "Convenience wrapper for exonware-xwjson - provides 'import xwjson' alias"
+readme = "README.md"
+requires-python = ">=3.12"
+keywords = []
+classifiers = []
+dependencies = [
+    "exonware-xwjson",
+]
+authors = []
+"{ name" = "eXonware Backend Team"
+
+[project.license]
+text = "MIT"
+
+[project.optional-dependencies]
+lazy = [
+    "exonware-xwjson[lazy]",
+]
+exonware-xwlazy = [
+    "exonware-xwjson[exonware-xwlazy]",
+]
+dev = [
+    "exonware-xwjson[dev]",
+]
+"black>" = [
+    "exonware-xwjson[black>]",
+]
+"isort>" = [
+    "exonware-xwjson[isort>]",
+]
+"mypy>" = [
+    "exonware-xwjson[mypy>]",
+]
+"pytest>" = [
+    "exonware-xwjson[pytest>]",
+]
+"pytest-asyncio>" = [
+    "exonware-xwjson[pytest-asyncio>]",
+]
+"pytest-cov>" = [
+    "exonware-xwjson[pytest-cov>]",
+]
+full = [
+    "exonware-xwjson[full]",
+]
+attrs = [
+    "exonware-xwjson[attrs]",
+]
+bcrypt = [
+    "exonware-xwjson[bcrypt]",
+]
+bottleneck = [
+    "exonware-xwjson[bottleneck]",
+]
+brotli = [
+    "exonware-xwjson[brotli]",
+]
+cachebox = [
+    "exonware-xwjson[cachebox]",
+]
+cachetools = [
+    "exonware-xwjson[cachetools]",
+]
+cbor2 = [
+    "exonware-xwjson[cbor2]",
+]
+charset-normalizer = [
+    "exonware-xwjson[charset-normalizer]",
+]
+cloudpickle = [
+    "exonware-xwjson[cloudpickle]",
+]
+cython = [
+    "exonware-xwjson[cython]",
+]
+dicttoxml = [
+    "exonware-xwjson[dicttoxml]",
+]
+fqdn = [
+    "exonware-xwjson[fqdn]",
+]
+httpx = [
+    "exonware-xwjson[httpx]",
+]
+hyperlight_hyperjson = [
+    "exonware-xwjson[hyperlight_hyperjson]",
+]
+isoduration = [
+    "exonware-xwjson[isoduration]",
+]
+jmespath = [
+    "exonware-xwjson[jmespath]",
+]
+json5 = [
+    "exonware-xwjson[json5]",
+]
+jsonpatch = [
+    "exonware-xwjson[jsonpatch]",
+]
+jsonpath-ng = [
+    "exonware-xwjson[jsonpath-ng]",
+]
+jsonschema = [
+    "exonware-xwjson[jsonschema]",
+]
+lz4 = [
+    "exonware-xwjson[lz4]",
+]
+msgpack = [
+    "exonware-xwjson[msgpack]",
+]
+msgspec = [
+    "exonware-xwjson[msgspec]",
+]
+numpy = [
+    "exonware-xwjson[numpy]",
+]
+opentelemetry-api = [
+    "exonware-xwjson[opentelemetry-api]",
+]
+orjson = [
+    "exonware-xwjson[orjson]",
+]
+pandas = [
+    "exonware-xwjson[pandas]",
+]
+psutil = [
+    "exonware-xwjson[psutil]",
+]
+pyarrow = [
+    "exonware-xwjson[pyarrow]",
+]
+pylru = [
+    "exonware-xwjson[pylru]",
+]
+pymongo = [
+    "exonware-xwjson[pymongo]",
+]
+pytz = [
+    "exonware-xwjson[pytz]",
+]
+PyYAML = [
+    "exonware-xwjson[PyYAML]",
+]
+regex = [
+    "exonware-xwjson[regex]",
+]
+rfc3339-validator = [
+    "exonware-xwjson[rfc3339-validator]",
+]
+rfc3987 = [
+    "exonware-xwjson[rfc3987]",
+]
+rich = [
+    "exonware-xwjson[rich]",
+]
+scikit-learn = [
+    "exonware-xwjson[scikit-learn]",
+]
+tomli-w = [
+    "exonware-xwjson[tomli-w]",
+]
+uarray = [
+    "exonware-xwjson[uarray]",
+]
+uri-template = [
+    "exonware-xwjson[uri-template]",
+]
+webcolors = [
+    "exonware-xwjson[webcolors]",
+]
+xmltodict = [
+    "exonware-xwjson[xmltodict]",
+]
+zstandard = [
+    "exonware-xwjson[zstandard]",
+]
+
+[project.urls]
+Homepage = "https://exonware.com"
+Repository = "https://github.com/exonware/xwjson"
+Documentation = "https://github.com/exonware/xwjson#readme"
+Subtree = "https://github.com/exonware/xwjson.git"
+
+[tool.hatch.version]
+path = "src/exonware/xwjson/version.py"
+
+[tool.hatch.build.targets.wheel]
+only-include = [
+    "README.md",
+    "src/xwjson_wrapper.py",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/tests",
+    "/README.md",
+    "/.github",
+]
