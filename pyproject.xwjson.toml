@@ -1,0 +1,100 @@
+# Source size (src/*): ~230.7 KB
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "xwjson"
+dynamic = [
+    "version",
+]
+description = "Convenience wrapper for exonware-xwjson - provides 'import xwjson' alias"
+readme = "README.md"
+requires-python = ">=3.12"
+keywords = [
+    "serialization",
+    "json",
+    "binary",
+    "messagepack",
+    "exonware",
+]
+classifiers = []
+dependencies = [
+    "exonware-xwjson",
+]
+authors = [
+    { name = "eXonware Backend Team", email = "connect@exonware.com" },
+]
+
+[project.license]
+text = "Apache-2.0"
+
+[project.optional-dependencies]
+# First-party XW libs composed by this package (excludes exonware-xwsystem==0.9.0.37; see lazy/full).
+xw = [
+    "exonware-xwjson[xw]",
+]
+lazy = [
+    "exonware-xwjson[lazy]",
+]
+full = [
+    "exonware-xwjson[full]",
+]
+dev = [
+    "exonware-xwjson[dev]",
+]
+
+[project.urls]
+Homepage = "https://exonware.com"
+Repository = "https://github.com/exonware/xwjson"
+Documentation = "https://github.com/exonware/xwjson#readme"
+Subtree = "https://github.com/exonware/xwjson.git"
+
+[tool.exonware.upload]
+subtree_push_mode = "snapshot"
+
+[tool.black]
+line-length = 88
+target-version = [
+    "py312",
+]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_any_generics = true
+disallow_untyped_calls = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+[tool.hatch.version]
+path = "src/exonware/xwjson/version.py"
+
+[tool.hatch.build.targets.wheel]
+only-include = [
+    "README.md",
+    "src/xwjson_wrapper.py",
+]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/tests",
+    "/README.md",
+    "/.github",
+]
